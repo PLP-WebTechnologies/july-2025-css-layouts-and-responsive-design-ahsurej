@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color:white;
+}
+
+/* ========== Header ========== */
+header {
+  background-color: white;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ========== Navigation (Flexbox) ========== */
+nav {
+  background-color: blue;
+}
+
+.nav-links {
+  display: flex; /* Flexbox used here */
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  margin: 0.5rem 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ========== Main Layout (Grid) ========== */
+.main-layout {
+  display: grid; /* Grid used here */
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* ========== Main Content Area ========== */
+main {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ========== Sidebar ========== */
+aside {
+  background-color: #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ========== Cards (Flexbox inside Grid) ========== */
+.card-container {
+  display: flex; /* Flexbox inside Grid layout */
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #e0f7fa;
+  padding: 1rem;
+  flex: 1 1 30%;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ========== Responsive Design ========== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr; /* Stack main and sidebar */
+  }
+
+  .card {
+    flex: 1 1 45%; /* Slightly larger cards on tablet */
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex: 1 1 100%; /* Full width cards on mobile */
+  }
+
+  .main-layout {
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
